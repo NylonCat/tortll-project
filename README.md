@@ -13,3 +13,10 @@ All of this starts off from a consideration I had on modern commercial VPNs: as 
 One of the obvious solutions to this is to host a VPN server ourselves, which is one of the coolest thing to have in my opinion (being able to connect to your home and all your services from across the world is super useful), however you still have to trust your ISP, and you can't "travel the world" if needed.
 
 And from here, I started wondering: is there a way to make a commercial VPN truly zero-trust? Can an hypothetical company mathematically prove to the clients that the server isn't logging or stealing anything and it's just being used as a bridge between them and the internet?
+
+## How does it work?
+> Note: to be completely transparent, I'm using AI to assist and help me discover and learn these technologies. I'm nowhere near to be an expert on the field, and that's why I'm also seeking out on feedback and opinions! As I said, I'm just a student, I don't (yet) have fancy PhDs, but I'm for sure learning new stuff!
+
+Turns out there **is** a way, using Trusted Execution Environments (TEE)! As the name says, all the software would run inside an encrypted and secure hardware system directly managed by the processor. AMD and Intel already developed CPUs that support these, such as [AMD SEV-SNP](https://www.amd.com/en/developer/sev.html) and [Intel TDX](https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html) technologies.
+To make it simple, these allow to create inside a host operating system (let's say, for example, a Debian machine with an AMD SEV-SNP CPU) virtual machines whose RAM, which is allocated and reserved from the host to the VM, is fully encrypted by a 
+*to be continue, still work in progress*
